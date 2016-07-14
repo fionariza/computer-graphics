@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using OpenGL;
 using Tao.FreeGlut;
 
@@ -14,6 +15,8 @@ namespace ComputerGraphics
         private static VBO<Vector3> triangleColor, squareColor;
         //в каком порядке рендерить елементы
         private static VBO<int> triangleElements, squareElements;
+        private static Stopwatch watch;
+        private static float angle;
         static void Main(string[] args)
         {
 
@@ -39,8 +42,11 @@ namespace ComputerGraphics
             triangleElements = new VBO<int>(new int[] { 0, 1, 2 }, BufferTarget.ElementArrayBuffer);
             squareElements = new VBO<int>(new int[] { 0, 1, 2, 3 }, BufferTarget.ElementArrayBuffer);
             //red, green, blue color
-            triangleColor = new VBO<Vector3>(new[] {new Vector3(1,0,0),new Vector3(0,1,0),new Vector3(0,0,1)});
-            squareColor = new VBO<Vector3>(new Vector3[] {new Vector3(0.5, 0.5, 1), new Vector3(0.5, 0.5, 1), new Vector3(0.5, 0.5, 1), });
+            triangleColor = new VBO<Vector3>(new[] { new Vector3(1, 0, 0), new Vector3(0, 1, 0), new Vector3(0, 0, 1) });
+            //blue color
+            squareColor = new VBO<Vector3>(new Vector3[] { new Vector3(0.5, 0.5, 1), new Vector3(0.5, 0.5, 1), new Vector3(0.5, 0.5, 1), new Vector3(0.5, 0.5, 1) });
+
+            watch = Stopwatch.StartNew();
 
             Glut.glutMainLoop();
         }
@@ -51,26 +57,33 @@ namespace ComputerGraphics
         }
         private static void OnRenderFrame()
         {
+            watch.Stop();
+            var deltaTime = (float)watch.ElapsedTicks / Stopwatch.Frequency;
+            watch.Restart();
+            angle += deltaTime;
+
             //должны стереть предыдущую информацию
             Gl.Viewport(0, 0, width, height);
             Gl.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
-            
+
 
             program.Use();
             //рисуем треугольник
-            program["model_matrix"].SetValue(Matrix4.CreateTranslation(new Vector3(-1.5f,0,0)));
+            program["model_matrix"].SetValue(Matrix4.CreateRotationZ(angle) * Matrix4.CreateTranslation(new Vector3(-1.5f, 0, 0)));
 
             var vertexPositionIndex = (uint)Gl.GetAttribLocation(program.ProgramID, "vertexPosition");
             Gl.EnableVertexAttribArray(vertexPositionIndex);
             Gl.BindBuffer(triangle);
             Gl.VertexAttribPointer(vertexPositionIndex, triangle.Size, triangle.PointerType, true, 12, IntPtr.Zero);
+            Gl.BindBufferToShaderAttribute(triangleColor, program, "vertexColor");
             Gl.BindBuffer(triangleElements);
-            Gl.DrawElements(BeginMode.Triangles, triangleElements.Count, DrawElementsType.UnsignedInt,IntPtr.Zero);
+            Gl.DrawElements(BeginMode.Triangles, triangleElements.Count, DrawElementsType.UnsignedInt, IntPtr.Zero);
 
 
             //рисуем квадрат
-            program["model_matrix"].SetValue(Matrix4.CreateTranslation(new Vector3(1.5f, 0, 0)));
+            program["model_matrix"].SetValue(Matrix4.CreateTranslation(new Vector3(1.5f, 0, 0) * Matrix4.CreateRotationZ(angle)));
             Gl.BindBufferToShaderAttribute(square, program, "vertexPosition");
+            Gl.BindBufferToShaderAttribute(squareColor, program, "vertexColor");
             Gl.BindBuffer(squareElements);
             Gl.DrawElements(BeginMode.Quads, squareElements.Count, DrawElementsType.UnsignedInt, IntPtr.Zero);
 
@@ -101,7 +114,7 @@ void main(void)
 
 
         public static string FragmentShader = @"
-int vec3 color;
+in vec3 color;
 
 void main(void)
 {
