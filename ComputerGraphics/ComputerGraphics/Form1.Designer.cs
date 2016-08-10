@@ -28,12 +28,42 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.openGlControl = new Tao.Platform.Windows.SimpleOpenGlControl();
+            this.SuspendLayout();
+            // 
+            // openGlControl
+            // 
+            this.openGlControl.AccumBits = ((byte)(0));
+            this.openGlControl.AutoCheckErrors = false;
+            this.openGlControl.AutoFinish = false;
+            this.openGlControl.AutoMakeCurrent = true;
+            this.openGlControl.AutoSwapBuffers = true;
+            this.openGlControl.BackColor = System.Drawing.Color.Transparent;
+            this.openGlControl.ColorBits = ((byte)(32));
+            this.openGlControl.DepthBits = ((byte)(16));
+            this.openGlControl.Location = new System.Drawing.Point(9, 9);
+            this.openGlControl.Margin = new System.Windows.Forms.Padding(0);
+            this.openGlControl.Name = "openGlControl";
+            this.openGlControl.Size = new System.Drawing.Size(266, 243);
+            this.openGlControl.StencilBits = ((byte)(0));
+            this.openGlControl.TabIndex = 0;
+            this.openGlControl.Load += new System.EventHandler(this.openGlControl_Load);
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.openGlControl);
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private Tao.Platform.Windows.SimpleOpenGlControl openGlControl;
     }
 }
 

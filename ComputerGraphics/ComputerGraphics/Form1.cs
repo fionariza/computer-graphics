@@ -16,5 +16,10 @@ namespace ComputerGraphics
         {
             InitializeComponent();
         }
+
+        private void openGlControl_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
