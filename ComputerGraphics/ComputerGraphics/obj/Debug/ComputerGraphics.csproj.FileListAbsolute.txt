@@ -1,8 +1,0 @@
-D:\Source\Repos\LP\computer-graphics\ComputerGraphics\ComputerGraphics\bin\Debug\ComputerGraphics.exe.config
-D:\Source\Repos\LP\computer-graphics\ComputerGraphics\ComputerGraphics\bin\Debug\ComputerGraphics.exe
-D:\Source\Repos\LP\computer-graphics\ComputerGraphics\ComputerGraphics\bin\Debug\ComputerGraphics.pdb
-D:\Source\Repos\LP\computer-graphics\ComputerGraphics\ComputerGraphics\obj\Debug\ComputerGraphics.csprojResolveAssemblyReference.cache
-D:\Source\Repos\LP\computer-graphics\ComputerGraphics\ComputerGraphics\obj\Debug\ComputerGraphics.Properties.Resources.resources
-D:\Source\Repos\LP\computer-graphics\ComputerGraphics\ComputerGraphics\obj\Debug\ComputerGraphics.csproj.GenerateResource.Cache
-D:\Source\Repos\LP\computer-graphics\ComputerGraphics\ComputerGraphics\obj\Debug\ComputerGraphics.exe
-D:\Source\Repos\LP\computer-graphics\ComputerGraphics\ComputerGraphics\obj\Debug\ComputerGraphics.pdb
