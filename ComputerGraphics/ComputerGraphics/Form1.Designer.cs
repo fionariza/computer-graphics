@@ -62,6 +62,18 @@
             this.rotatedY_minus = new System.Windows.Forms.Button();
             this.rotatedZ_Plus = new System.Windows.Forms.Button();
             this.rotatedZ_Minus = new System.Windows.Forms.Button();
+            this.radius_lbl = new System.Windows.Forms.Label();
+            this.height_lbl = new System.Windows.Forms.Label();
+            this.slices_lbl = new System.Windows.Forms.Label();
+            this.stacks_lbl = new System.Windows.Forms.Label();
+            this.radius_Plus = new System.Windows.Forms.Button();
+            this.height_Plus = new System.Windows.Forms.Button();
+            this.slices_Plus = new System.Windows.Forms.Button();
+            this.stacks_Plus = new System.Windows.Forms.Button();
+            this.radius_Minus = new System.Windows.Forms.Button();
+            this.height_minus = new System.Windows.Forms.Button();
+            this.slices_Minus = new System.Windows.Forms.Button();
+            this.stacks_Minus = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // openGlControl
@@ -400,11 +412,139 @@
             this.rotatedZ_Minus.UseVisualStyleBackColor = true;
             this.rotatedZ_Minus.Click += new System.EventHandler(this.rotatedZ_Minus_Click);
             // 
+            // radius_lbl
+            // 
+            this.radius_lbl.AutoSize = true;
+            this.radius_lbl.Location = new System.Drawing.Point(1020, 355);
+            this.radius_lbl.Name = "radius_lbl";
+            this.radius_lbl.Size = new System.Drawing.Size(40, 13);
+            this.radius_lbl.TabIndex = 34;
+            this.radius_lbl.Text = "Radius";
+            // 
+            // height_lbl
+            // 
+            this.height_lbl.AutoSize = true;
+            this.height_lbl.Location = new System.Drawing.Point(1020, 382);
+            this.height_lbl.Name = "height_lbl";
+            this.height_lbl.Size = new System.Drawing.Size(38, 13);
+            this.height_lbl.TabIndex = 35;
+            this.height_lbl.Text = "Height";
+            // 
+            // slices_lbl
+            // 
+            this.slices_lbl.AutoSize = true;
+            this.slices_lbl.Location = new System.Drawing.Point(1020, 410);
+            this.slices_lbl.Name = "slices_lbl";
+            this.slices_lbl.Size = new System.Drawing.Size(35, 13);
+            this.slices_lbl.TabIndex = 36;
+            this.slices_lbl.Text = "Slices";
+            // 
+            // stacks_lbl
+            // 
+            this.stacks_lbl.AutoSize = true;
+            this.stacks_lbl.Location = new System.Drawing.Point(1020, 432);
+            this.stacks_lbl.Name = "stacks_lbl";
+            this.stacks_lbl.Size = new System.Drawing.Size(40, 13);
+            this.stacks_lbl.TabIndex = 37;
+            this.stacks_lbl.Text = "Stacks";
+            // 
+            // radius_Plus
+            // 
+            this.radius_Plus.Location = new System.Drawing.Point(1194, 345);
+            this.radius_Plus.Name = "radius_Plus";
+            this.radius_Plus.Size = new System.Drawing.Size(75, 23);
+            this.radius_Plus.TabIndex = 38;
+            this.radius_Plus.Text = "+";
+            this.radius_Plus.UseVisualStyleBackColor = true;
+            this.radius_Plus.Click += new System.EventHandler(this.radius_Plus_Click);
+            // 
+            // height_Plus
+            // 
+            this.height_Plus.Location = new System.Drawing.Point(1194, 372);
+            this.height_Plus.Name = "height_Plus";
+            this.height_Plus.Size = new System.Drawing.Size(75, 23);
+            this.height_Plus.TabIndex = 39;
+            this.height_Plus.Text = "+";
+            this.height_Plus.UseVisualStyleBackColor = true;
+            this.height_Plus.Click += new System.EventHandler(this.height_Plus_Click);
+            // 
+            // slices_Plus
+            // 
+            this.slices_Plus.Location = new System.Drawing.Point(1194, 401);
+            this.slices_Plus.Name = "slices_Plus";
+            this.slices_Plus.Size = new System.Drawing.Size(75, 23);
+            this.slices_Plus.TabIndex = 40;
+            this.slices_Plus.Text = "+";
+            this.slices_Plus.UseVisualStyleBackColor = true;
+            this.slices_Plus.Click += new System.EventHandler(this.slices_Plus_Click);
+            // 
+            // stacks_Plus
+            // 
+            this.stacks_Plus.Location = new System.Drawing.Point(1194, 427);
+            this.stacks_Plus.Name = "stacks_Plus";
+            this.stacks_Plus.Size = new System.Drawing.Size(75, 23);
+            this.stacks_Plus.TabIndex = 41;
+            this.stacks_Plus.Text = "+";
+            this.stacks_Plus.UseVisualStyleBackColor = true;
+            this.stacks_Plus.Click += new System.EventHandler(this.stacks_Plus_Click);
+            // 
+            // radius_Minus
+            // 
+            this.radius_Minus.Location = new System.Drawing.Point(1296, 345);
+            this.radius_Minus.Name = "radius_Minus";
+            this.radius_Minus.Size = new System.Drawing.Size(75, 23);
+            this.radius_Minus.TabIndex = 42;
+            this.radius_Minus.Text = "-";
+            this.radius_Minus.UseVisualStyleBackColor = true;
+            this.radius_Minus.Click += new System.EventHandler(this.radius_Minus_Click);
+            // 
+            // height_minus
+            // 
+            this.height_minus.Location = new System.Drawing.Point(1297, 374);
+            this.height_minus.Name = "height_minus";
+            this.height_minus.Size = new System.Drawing.Size(75, 23);
+            this.height_minus.TabIndex = 43;
+            this.height_minus.Text = "-";
+            this.height_minus.UseVisualStyleBackColor = true;
+            this.height_minus.Click += new System.EventHandler(this.height_minus_Click);
+            // 
+            // slices_Minus
+            // 
+            this.slices_Minus.Location = new System.Drawing.Point(1297, 400);
+            this.slices_Minus.Name = "slices_Minus";
+            this.slices_Minus.Size = new System.Drawing.Size(75, 23);
+            this.slices_Minus.TabIndex = 44;
+            this.slices_Minus.Text = "-";
+            this.slices_Minus.UseVisualStyleBackColor = true;
+            this.slices_Minus.Click += new System.EventHandler(this.slices_Minus_Click);
+            // 
+            // stacks_Minus
+            // 
+            this.stacks_Minus.Location = new System.Drawing.Point(1296, 429);
+            this.stacks_Minus.Name = "stacks_Minus";
+            this.stacks_Minus.Size = new System.Drawing.Size(75, 23);
+            this.stacks_Minus.TabIndex = 45;
+            this.stacks_Minus.Text = "-";
+            this.stacks_Minus.UseVisualStyleBackColor = true;
+            this.stacks_Minus.Click += new System.EventHandler(this.stacks_Minus_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1424, 631);
+            this.Controls.Add(this.stacks_Minus);
+            this.Controls.Add(this.slices_Minus);
+            this.Controls.Add(this.height_minus);
+            this.Controls.Add(this.radius_Minus);
+            this.Controls.Add(this.stacks_Plus);
+            this.Controls.Add(this.slices_Plus);
+            this.Controls.Add(this.height_Plus);
+            this.Controls.Add(this.radius_Plus);
+            this.Controls.Add(this.stacks_lbl);
+            this.Controls.Add(this.slices_lbl);
+            this.Controls.Add(this.height_lbl);
+            this.Controls.Add(this.radius_lbl);
             this.Controls.Add(this.rotatedZ_Minus);
             this.Controls.Add(this.rotatedZ_Plus);
             this.Controls.Add(this.rotatedY_minus);
@@ -483,6 +623,18 @@
         private System.Windows.Forms.Button rotatedY_minus;
         private System.Windows.Forms.Button rotatedZ_Plus;
         private System.Windows.Forms.Button rotatedZ_Minus;
+        private System.Windows.Forms.Label radius_lbl;
+        private System.Windows.Forms.Label height_lbl;
+        private System.Windows.Forms.Label slices_lbl;
+        private System.Windows.Forms.Label stacks_lbl;
+        private System.Windows.Forms.Button radius_Plus;
+        private System.Windows.Forms.Button height_Plus;
+        private System.Windows.Forms.Button slices_Plus;
+        private System.Windows.Forms.Button stacks_Plus;
+        private System.Windows.Forms.Button radius_Minus;
+        private System.Windows.Forms.Button height_minus;
+        private System.Windows.Forms.Button slices_Minus;
+        private System.Windows.Forms.Button stacks_Minus;
     }
 }
 
