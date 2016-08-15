@@ -28,31 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.simpleOpenGlControl1 = new Tao.Platform.Windows.SimpleOpenGlControl();
+            this.openGlControl = new Tao.Platform.Windows.SimpleOpenGlControl();
             this.SuspendLayout();
             // 
-            // simpleOpenGlControl1
+            // openGlControl
             // 
-            this.simpleOpenGlControl1.AccumBits = ((byte)(0));
-            this.simpleOpenGlControl1.AutoCheckErrors = false;
-            this.simpleOpenGlControl1.AutoFinish = false;
-            this.simpleOpenGlControl1.AutoMakeCurrent = true;
-            this.simpleOpenGlControl1.AutoSwapBuffers = true;
-            this.simpleOpenGlControl1.BackColor = System.Drawing.Color.Black;
-            this.simpleOpenGlControl1.ColorBits = ((byte)(32));
-            this.simpleOpenGlControl1.DepthBits = ((byte)(16));
-            this.simpleOpenGlControl1.Location = new System.Drawing.Point(3, 2);
-            this.simpleOpenGlControl1.Name = "simpleOpenGlControl1";
-            this.simpleOpenGlControl1.Size = new System.Drawing.Size(774, 429);
-            this.simpleOpenGlControl1.StencilBits = ((byte)(0));
-            this.simpleOpenGlControl1.TabIndex = 0;
+            this.openGlControl.AccumBits = ((byte)(0));
+            this.openGlControl.AutoCheckErrors = false;
+            this.openGlControl.AutoFinish = false;
+            this.openGlControl.AutoMakeCurrent = true;
+            this.openGlControl.AutoSwapBuffers = true;
+            this.openGlControl.BackColor = System.Drawing.Color.Black;
+            this.openGlControl.ColorBits = ((byte)(32));
+            this.openGlControl.DepthBits = ((byte)(16));
+            this.openGlControl.Location = new System.Drawing.Point(1, 0);
+            this.openGlControl.Name = "openGlControl";
+            this.openGlControl.Size = new System.Drawing.Size(778, 432);
+            this.openGlControl.StencilBits = ((byte)(0));
+            this.openGlControl.TabIndex = 0;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(777, 431);
-            this.Controls.Add(this.simpleOpenGlControl1);
+            this.Controls.Add(this.openGlControl);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -62,7 +62,7 @@
 
         #endregion
 
-        private Tao.Platform.Windows.SimpleOpenGlControl simpleOpenGlControl1;
+        private Tao.Platform.Windows.SimpleOpenGlControl openGlControl;
     }
 }
 

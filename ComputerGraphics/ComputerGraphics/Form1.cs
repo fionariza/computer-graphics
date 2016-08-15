@@ -239,6 +239,7 @@ namespace ComputerGraphics
             Gl.glRotated(RotatedAngle, RotatedX, RotatedY, RotatedZ);
             
             Glut.glutWireCylinder(Radius, Height, Slices, Stacks);
+            Glut.glutWireCube(Height);
 
             Gl.glPopMatrix();
             Gl.glFlush();
