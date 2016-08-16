@@ -189,7 +189,7 @@ namespace ComputerGraphics
             PerpectiveZNear = 0.1f;
             PerpectiveZFar = 200;
 
-            RotatedAngle = 90;
+            RotatedAngle = 0;
             RotatedX = 1;
             RotatedY = 0;
             RotatedZ = 0;
@@ -204,12 +204,6 @@ namespace ComputerGraphics
         {
             Glut.glutInit();
             Glut.glutInitDisplayMode(Glut.GLUT_RGB | Glut.GLUT_DOUBLE | Glut.GLUT_DEPTH);
-
-            Draw();
-        }
-
-        private void Draw()
-        {
             // отчитка окна 
             Gl.glClearColor(255, 255, 255, 1);
 
@@ -220,14 +214,17 @@ namespace ComputerGraphics
             Gl.glMatrixMode(Gl.GL_PROJECTION);
             Gl.glLoadIdentity();
 
-            Glu.gluPerspective(PerspectiveFovY, PerspectiveAspectRatio,PerpectiveZNear, PerpectiveZFar);
+            Glu.gluPerspective(PerspectiveFovY, PerspectiveAspectRatio, PerpectiveZNear, PerpectiveZFar);
             Gl.glMatrixMode(Gl.GL_MODELVIEW);
             Gl.glLoadIdentity();
             // настройка параметров OpenGL для визуализации 
             Gl.glEnable(Gl.GL_DEPTH_TEST);
 
+            Draw();
+        }
 
-
+        private void Draw()
+        {
 
             Gl.glClear(Gl.GL_COLOR_BUFFER_BIT | Gl.GL_DEPTH_BUFFER_BIT);
 
@@ -238,8 +235,7 @@ namespace ComputerGraphics
             Gl.glTranslated(TransX, TransY, TransZ);
             Gl.glRotated(RotatedAngle, RotatedX, RotatedY, RotatedZ);
             
-            Glut.glutWireCylinder(Radius, Height, Slices, Stacks);
-            Glut.glutWireCube(Height);
+            Glut.glutSolidCylinder(Radius, Height, Slices, Stacks);
 
             Gl.glPopMatrix();
             Gl.glFlush();

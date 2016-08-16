@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.openGlControl = new Tao.Platform.Windows.SimpleOpenGlControl();
+            this.RenderTimer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // openGlControl
@@ -47,6 +49,10 @@
             this.openGlControl.StencilBits = ((byte)(0));
             this.openGlControl.TabIndex = 0;
             // 
+            // RenderTimer
+            // 
+            this.RenderTimer.Tick += new System.EventHandler(this.RenderTimer_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -63,6 +69,7 @@
         #endregion
 
         private Tao.Platform.Windows.SimpleOpenGlControl openGlControl;
+        private System.Windows.Forms.Timer RenderTimer;
     }
 }
 
