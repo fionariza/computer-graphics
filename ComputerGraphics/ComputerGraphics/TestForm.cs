@@ -5,7 +5,7 @@ using Tao.OpenGl;
 
 namespace ComputerGraphics
 {
-    public partial class Form1 : Form
+    public partial class TestForm : Form
     {
         private int transX;
         private int transY;
@@ -176,7 +176,7 @@ namespace ComputerGraphics
             }
         }
 
-        public Form1()
+        public TestForm()
         {
             InitializeComponent();
             openGlControl.InitializeContexts();

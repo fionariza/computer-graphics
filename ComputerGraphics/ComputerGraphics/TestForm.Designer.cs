@@ -1,6 +1,6 @@
 ﻿namespace ComputerGraphics
 {
-    partial class Form1
+    partial class TestForm
     {
         /// <summary>
         /// Required designer variable.
@@ -528,7 +528,7 @@
             this.stacks_Minus.UseVisualStyleBackColor = true;
             this.stacks_Minus.Click += new System.EventHandler(this.stacks_Minus_Click);
             // 
-            // Form1
+            // TestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -579,8 +579,8 @@
             this.Controls.Add(this.transY_Plus);
             this.Controls.Add(this.transX_Plus);
             this.Controls.Add(this.openGlControl);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "TestForm";
+            this.Text = "TestForm";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
