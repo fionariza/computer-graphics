@@ -53,14 +53,14 @@
             // 
             this.RenderTimer.Tick += new System.EventHandler(this.RenderTimer_Tick);
             // 
-            // Form1
+            // TestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(777, 431);
             this.Controls.Add(this.openGlControl);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "TestForm";
+            this.Text = "Test Form";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
