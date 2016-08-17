@@ -96,6 +96,30 @@ namespace TestWork
             Gl.glEnd();
         }
 
+        private void PaintRight(int mode)
+        {
+            Gl.glBegin(mode);
+
+            Gl.glVertex3d(2, 2, 0);
+            Gl.glVertex3d(2, 2, 2);
+            Gl.glVertex3d(2, 0, 2);
+            Gl.glVertex3d(2, 0, 0);
+
+            Gl.glEnd();
+        }
+
+        private void PaintLeft(int mode)
+        {
+            Gl.glBegin(mode);
+
+            Gl.glVertex3d(0, 2, 0);
+            Gl.glVertex3d(0, 2, 2);
+            Gl.glVertex3d(0, 0, 2);
+            Gl.glVertex3d(0, 0, 0);
+
+            Gl.glEnd();
+        }
+
         private void Render(Color3F color, Rotated rotated, Translated translated, Action renderingAction)
         {
             if (renderingAction == null)
@@ -151,13 +175,14 @@ namespace TestWork
                 z2 = s * x3 + c * z2;
             }
 
-           Gl.glEnd();
+            Gl.glEnd();
         }
 
         private void RenderTimer_Tick(object sender, EventArgs e)
         {
             _angle += 15;
             int mode = Gl.GL_LINE_LOOP;
+           // int mode = Gl.GL_QUADS;
             Gl.glClear(Gl.GL_COLOR_BUFFER_BIT | Gl.GL_DEPTH_BUFFER_BIT);
 
             Render(Color3F.GetColor3F(0, 1.0f, -6),
@@ -169,7 +194,8 @@ namespace TestWork
                     PaintTop(mode);
                     PaintBack(mode);
                     PaintBottom(mode);
-
+                    PaintLeft(mode);
+                    PaintRight(mode);
                 });
 
             Render(Color3F.GetColor3F(0, 0, 1f), Rotated.GetRotated(270, 0, 1, 1), Translated.GetTranslated(-0.5f, -1, -6),
